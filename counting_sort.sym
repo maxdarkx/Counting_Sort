@@ -1,0 +1,10 @@
+//Symbol Name		Page Address
+//----------------	------------
+//	cant                    301F
+//	data_address            301E
+//	fin_max                 300E
+//	fin_min                 301C
+//	max                     3020
+//	max_val                 3004
+//	min                     3021
+//	min_val                 3012
