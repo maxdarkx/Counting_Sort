@@ -1,16 +1,20 @@
 //Symbol Name		Page Address
 //----------------	------------
-//	cant                    304E
-//	data_address            304C
+//	cant                    305E
+//	data_address            305B
+//	end_order_vector        3050
 //	fin_max                 3013
 //	fin_min                 3022
 //	found                   3036
-//	max                     304F
+//	found1                  3052
+//	max                     305F
 //	max_pos                 3027
 //	max_val                 3008
-//	min                     3050
+//	min                     3060
 //	min_pos                 302B
 //	min_val                 3017
-//	order_vector            304D
+//	not_found1              3056
+//	order_vector            305C
+//	ordered_vector          305D
 //	round                   303E
-//	tam                     3051
+//	tam                     3061
