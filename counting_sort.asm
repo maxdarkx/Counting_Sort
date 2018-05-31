@@ -131,45 +131,34 @@ not_found1	add r5,r5,#1 	;si no hay datos entonces me muevo a la proxima posicio
 ;convertir a ascii el valor encontrado
 ;chequear
 		ld r6,ordered_vector
-ascii_c	and r0,r0,#0
+		and r0,r0,#0
 		and r2,r2,#0
 		add r2,r2,#10
 		and r3,r3,#0
 		ld r4, ascii_add
-		lea r5,asciiConvTemp
-
+		ld r5,cant
 ascii_c	ldr r1,r6,#0
 		brp asciipos
 		
 		not r1,r1
 		add r1,r1,#1
 		ld r0,ascii_minus
-		str r0,r5,#0
-		add r5,r5,#1
+		out
 asciipos jsr division
-
-		add r3,r3,#0
-		
-		add r3,r3,r4
-		str r3,r5,#0
-		add r5,r5,#1
 		add r1,r0,#0
+		and r0,r0,#0
+		add r0,r0,r4
+		add r0,r0,r3
+		out
+		add r1,r1,#0
 		brp asciipos
 		and r1,r1,#0
-		str r1,r5,#0
-
+		ld r0,space
+		out
 		add r6,r6,#1
-		lea r1,ascii_vector
-		lea r5,asciiConvTemp
+		add r5,r5,#-1
+		brzp ascii_c
 
-ascii_text	ldr r3,r5,#0
-			brnz next_as
-			str r3,r1,#0
-			add r1,r1,#1
-			add r5,r5,#1
-			brnzp ascii_text
-
-next_as		brp ascii_c
 
 
 
@@ -184,9 +173,9 @@ max .blkw 1					;numero maximo
 min .blkw 1 				;numero minimo
 tam .blkw 1 				;distancia entre el mayor valor y el menor, tamano del vector order_vector
 asciiConvTemp .blkw 7
-ascii_add .fill #30
+ascii_add .fill x0030
 ascii_minus .fill #45
-
+space .fill #32
 
 
 ;r1 dividendo, r2 divisor, r0 cociente, r3 residuo
