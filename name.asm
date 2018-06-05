@@ -99,4 +99,5 @@
 .fill #-518
 .fill #430
 .fill #713
+.fill x8000
 .end
